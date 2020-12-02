@@ -1,0 +1,14 @@
+
+    <form [formGroup]="angularForm">
+        <input type="text" formControlName="nom" [ngClass]="{'form-control': true, 'is-invalid' : nomInvalide()}">
+        <button type="submit" [disabled]="pbValidation()" (click)="onRechercher()">Rechercher</button>
+        <button type="reset">Annuler</button>
+        <div *ngIf="nomInvalide()" class="alert alert-danger">
+            Le nom ne doit contenir que des lettres
+        </div>
+    </form>
+<div>
+    <h2>Pokemon Recherché</h2>
+    <p></p>
+</div>
+
